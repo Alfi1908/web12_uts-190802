@@ -1,230 +1,97 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Paket LintasInternet</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f2f2f2;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surat Valentine</title>
+<style>
+    body {
+        background-color: pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
 
-        /* Navbar */
-        .navbar {
-            background-color: #6a1b9a;
-            color: white;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .envelope {
+        position: relative;
+        background: white;
+        padding: 20px;
+        width: 350px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
 
-            .navbar a {
-                color: white;
-                text-decoration: none;
-                margin: 0 15px;
-                font-weight: bold;
-            }
+    .envelope:hover {
+        transform: scale(1.02);
+    }
 
-                .navbar a:hover {
-                    color: #ffccff;
-                }
+    .envelope h2 {
+        margin: 0;
+        font-size: 22px;
+    }
 
-        /* Hero/banner */
-        .hero {
-            width: 100%;
-        }
+    .envelope p {
+        font-size: 14px;
+        color: #555;
+    }
 
-            .hero img {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
+    .heart {
+        font-size: 24px;
+        color: red;
+        margin-top: 10px;
+    }
 
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
+    /* Animasi teks keluar */
+    .message {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background: white;
+        padding: 15px;
+        width: 300px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+        opacity: 0;
+        text-align: center;
+        transition: all 0.7s ease;
+        z-index: 10;
+    }
 
-        h2 {
-            color: #6a1b9a;
-            margin-bottom: 10px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th {
-            background-color: #6a1b9a;
-            color: white;
-            padding: 12px;
-        }
-
-        td {
-            background: #f9f9f9;
-            padding: 12px;
-            border: 1px solid #ddd;
-        }
-
-        .btn {
-            background-color: #8e24aa;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-
-            .btn:hover {
-                background-color: #b23fc3;
-            }
-
-        /* Footer sections */
-        .section {
-            margin-top: 40px;
-        }
-    </style>
+    .show-message {
+        transform: translate(-50%, -150%) scale(1);
+        opacity: 1;
+    }
+</style>
 </head>
 <body>
 
-    <div class="navbar">
-        <div class="logo"><strong>LintasInternet</strong></div>
-        <div class="menu">
-            <a href="#produk">Produk</a>
-            <a href="https://www.instagram.com" target="_blank">Social Media</a>
-                <a href="https://www.speedtest.net" target="_blank">Tes Kecepatan</a>
-                <a href="#formulir">Formulir Online</a>
+<div class="envelope" onclick="showLetter()">
+    <h2>Dear Crush,</h2>
+    <p>Click to open the message 💌</p>
+    <div class="heart">❤️</div>
 </div>
-    </div>
 
-    
-    <div class="hero">
-        <img src="LINTASINTERNET.png" alt="Banner MyRepublic">
-    </div>
+<div class="message" id="message">
+    <h3>Dear Crush,</h3>
+    <p>
+        I've been keeping this in for a while, but I think Valentine's Day is the perfect time to say it—
+        you're the reason my days feel brighter. Your smile, your laughter, the way you make everything
+        feel lighter—it all makes my heart race in the best way possible.
+    </p>
+</div>
 
-    <!-- Konten -->
-    <div class="container" id="produk">
-        <h2>Paket Wifi LintasInternet</h2>
-        <p style="text-align:center">Pilih paket terbaik sesuai kebutuhan Anda. Klik tombol untuk memilih.</p>
-        <table>
-            <tr class="promo-header">
-                <td></td>
-                <td>MyGamer</td>
-                <td>Nova</td>
-                <td>Fast</td>
-                <td>Value</td>
-            </tr>
-            <tr>
-                <td class="header-col">Kecepatan</td>
-                <td class="mygamer">Up to 250 Mbps</td>
-                <td class="highlight">Up to 100 Mbps</td>
-                <td class="highlight">Up to 50 Mbps</td>
-                <td class="highlight">Up to 30 Mbps</td>
-            </tr>
-            <tr>
-                <td class="header-col">Download : Upload</td>
-                <td class="mygamer">1:1</td>
-                <td>1:1</td>
-                <td>1:1</td>
-                <td>1:1</td>
-            </tr>
-            <tr>
-                <td class="header-col">Kuota</td>
-                <td class="mygamer">Unlimited</td>
-                <td>Unlimited</td>
-                <td>Unlimited</td>
-                <td>Unlimited</td>
-            </tr>
-            <tr>
-                <td class="header-col">Fair Usage Policy</td>
-                <td class="mygamer">Tanpa FUP</td>
-                <td>Tanpa FUP</td>
-                <td>Tanpa FUP</td>
-                <td>Tanpa FUP</td>
-            </tr>
-            <tr>
-                <td class="header-col">Internet Protocol</td>
-                <td class="mygamer">IPv4 Public Static</td>
-                <td>Dynamic IP</td>
-                <td>Dynamic IP</td>
-                <td>Dynamic IP</td>
-            </tr>
-            <tr>
-                <td class="header-col">Devices</td>
-                <td class="mygamer">1-25 Devices</td>
-                <td>1-15 Devices</td>
-                <td>1-10 Devices</td>
-                <td>1-5 Devices</td>
-            </tr>
-            <tr>
-                <td class="header-col">Exclusive Router</td>
-                <td class="mygamer">Yes</td>
-                <td>Yes</td>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td class="header-col">Harga nett perbulan</td>
-                <td class="mygamer"><s>Rp 832.000</s><br>Rp 444.000</td>
-                <td><s>Rp 710.000</s><br>Rp 333.000</td>
-                <td><s>Rp 454.000</s><br>Rp 277.500</td>
-                <td><s>Rp 343.000</s><br>Rp 260.850</td>
-            </tr>
-            <tr class="btn-container">
-                <td></td>
-                <td><a href="https://www.dana.id" class="btn btn-yellow">Saya Mau Ini</a></td>
-                <td><a href="https://gopay.co.id" class="btn btn-purple">Saya Mau Ini</a></td>
-                <td><a href="https://midtrans.com" class="btn btn-purple">Saya Mau Ini</a></td>
-                <td><a href="https://ipaymu.com" class="btn btn-purple">Saya Mau Ini</a></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td colspan="3"><div class="best-deal">Best Deal</div></td>
-            </tr>
-        </table>
-
-        <section id="formulir" style="padding: 40px; background-color: #f5f5f5;">
-            <h2 style="text-align: center; color: #5a2a83;">Formulir Online</h2>
-            <form action="#" method="post" style="max-width: 600px; margin: 0 auto;">
-                <table style="width: 100%; border-spacing: 15px;">
-                    <tr>
-                        <td><label for="nama">Nama:</label></td>
-                        <td><input type="text" id="nama" name="nama" required style="width: 100%; padding: 8px;"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="alamat">Alamat:</label></td>
-                        <td><input type="text" id="alamat" name="alamat" required style="width: 100%; padding: 8px;"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="email">Email:</label></td>
-                        <td><input type="email" id="email" name="email" required style="width: 100%; padding: 8px;"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="nohp">No HP:</label></td>
-                        <td><input type="tel" id="nohp" name="nohp" required style="width: 100%; padding: 8px;"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="text-align: center;">
-                            <button type="submit" style="padding: 10px 25px; background-color: #5a2a83; color: white; border: none; cursor: pointer;">
-                                Submit
-                            </button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-        </section>
+<script>
+function showLetter() {
+    document.getElementById("message").classList.toggle("show-message");
+}
+</script>
 
 </body>
 </html>
